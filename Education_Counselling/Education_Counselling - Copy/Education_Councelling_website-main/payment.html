@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/paymentStyle.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .payment-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .payment-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .payment-form input[type="text"], .payment-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .payment-form .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .payment-form .col-50 {
+            width: 48%;
+        }
+
+        .payment-form .btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .payment-form .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="payment-header">
+            <h1>Payment Details</h1>
+            <p>Please complete the payment to finalize your mentor selection</p>
+        </div>
+
+        <div class="payment-form">
+            <form id="payment-form" method="GET" action="success.html">
+                <label for="fname">Full Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="John Doe" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+
+                <label for="mentor">Selected Mentor</label>
+                <input type="text" id="mentor" name="mentor" value="" readonly>
+
+                <label for="course">Selected Course</label>
+                <input type="text" id="course" name="course" value="" readonly>
+
+                <label for="amount">Amount</label>
+                <input type="text" id="amount" name="amount" value="₹500" readonly>
+
+                <label for="card">Credit/Debit Card</label>
+                <input type="text" id="card" name="cardnumber" placeholder="1111-2222-3333-4444" required>
+
+                <label for="expmonth">Exp Month</label>
+                <input type="text" id="expmonth" name="expmonth" placeholder="September" required>
+
+                <div class="row">
+                    <div class="col-50">
+                        <label for="expyear">Exp Year</label>
+                        <input type="text" id="expyear" name="expyear" placeholder="2024" required>
+                    </div>
+                    <div class="col-50">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="352" required>
+                    </div>
+                </div>
+
+                <input type="submit" value="Proceed to Payment" class="btn">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to get query parameters
+        function getQueryParams() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            return {
+                mentor: urlParams.get('mentor'),
+                course: urlParams.get('course')
+            };
+        }
+
+        // Populate form fields with query parameters
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = getQueryParams();
+            if (params.mentor) {
+                document.getElementById('mentor').value = params.mentor;
+            }
+            if (params.course) {
+                document.getElementById('course').value = params.course;
+            }
+        });
+
+        // Update form action dynamically with query parameters
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            const mentor = document.getElementById('mentor').value;
+            const course = document.getElementById('course').value;
+            const actionUrl = new URL(this.action, window.location.href);
+            actionUrl.searchParams.set('mentor', mentor);
+            actionUrl.searchParams.set('course', course);
+            this.action = actionUrl.href;
+        });
+    </script>
+</body>
+</html>

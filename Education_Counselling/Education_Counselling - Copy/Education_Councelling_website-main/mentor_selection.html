@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mentor-section {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .mentor-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .mentor-card {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .mentor-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .mentor-card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .mentor-card p {
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .rating {
+            color: #ffcc00;
+            font-size: 16px;
+        }
+
+        .book-btn {
+            display: block;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .book-btn:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
+        }
+
+        .footer h6 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .footer i {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="mentor-section">Choose Your Mentor</h2>
+
+        <form id="mentor-form" action="mentor-dashboard.html" method="GET">
+            <div class="mentor-cards">
+                <!-- Mentor 1 -->
+                <div class="mentor-card">
+                    <img src="images/Sayan.jpeg" alt="Sayan">
+                    <h3>Sayan</h3>
+                    <p>Expertise: Data Science, Machine Learning</p>
+                    <p>Industry Experience: 4 years</p>
+                    <p>City: "Kolkata",</p>
+                    <p> Email:"sayannandy25.02@gmail.com",</p>
+                    <p>Rating: <span class="rating">★★★★☆</span></p>
+                    <p>Number of Bookings: 120</p>
+                    <p>Time of Booking: 9 AM - 11 AM</p>
+                    <input type="radio" name="mentor" value="Sayan" style="display: none;" required>
+                    <input type="hidden" name="course" value="Course Name">
+                    <a href="#" class="book-btn" onclick="selectMentor('Sayan')">Select Mentor</a>
+                </div>
+
+                <!-- Mentor 2 -->
+                <div class="mentor-card">
+                    <img src="images/Rhitwika1.jpeg" alt="Rhitwika">
+                    <h3>Rhitwika</h3>
+                    <p>Expertise: Data Science, Machine Learning, Web Dev</p>
+                    <p>Industry Experience: 3 years</p>
+                    <p>City: "Kolkata",</p>
+                    <p>Email:"rhitwikapoddar@gmail.com",</p>
+                    <p>Rating: <span class="rating">★★★★★</span></p>
+                    <p>Number of Bookings: 90</p>
+                    <p>Time of Booking: 1 PM - 3 PM</p>
+                    <input type="radio" name="mentor" value="Rhitwika" style="display: none;" required>
+                    <input type="hidden" name="course" value="Course Name">
+                    <a href="#" class="book-btn" onclick="selectMentor('Rhitwika')">Select Mentor</a>
+                </div>
+
+                <!-- Mentor 3 -->
+                <div class="mentor-card">
+                    <img src="images/Suhani1.jpeg" alt="Suhani">
+                    <h3>Suhani</h3>
+                    <p>Expertise: Data Science, Machine Learning, Web Dev</p>
+                    <p>Industry Experience: 3 years</p>
+                    <p>City: "Kolkata",</p>
+                    <p>Email:"suhani.kundu2406@gmail.com",</p>
+                    <p>Rating: <span class="rating">★★★★☆</span></p>
+                    <p>Number of Bookings: 75</p>
+                    <p>Time of Booking: 4 PM - 6 PM</p>
+                    <input type="radio" name="mentor" value="Suhani" style="display: none;" required>
+                    <input type="hidden" name="course" value="Course Name">
+                    <a href="#" class="book-btn" onclick="selectMentor('Suhani')">Select Mentor</a>
+                </div>
+
+                <!-- Mentor 4 -->
+                <div class="mentor-card">
+                    <img src="images/Kaushan.jpeg" alt="Kaushan">
+                    <h3>Kaushan</h3>
+                    <p>Expertise: MERN Stack Developer, Block Chain Development</p>
+                    <p>Industry Experience: 4 years</p>
+                    <p>City: "Kolkata",</p>
+                    <p> Email:" kaushandutta5@gmail.com",</p>
+                    <p>Rating: <span class="rating">★★★★☆</span></p>
+                    <p>Number of Bookings: 75</p>
+                    <p>Time of Booking: 4 PM - 6 PM</p>
+                    <input type="radio" name="mentor" value="Kaushan" style="display: none;" required>
+                    <input type="hidden" name="course" value="Course Name">
+                    <a href="#" class="book-btn" onclick="selectMentor('Kaushan')">Select Mentor</a>
+                </div>
+
+                                
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h6>Find Us On</h6>
+        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+    </footer>
+
+    <script>
+        function selectMentor(mentorName) {
+            const form = document.getElementById('mentor-form');
+            form.action = `payment.html?mentor=${encodeURIComponent(mentorName)}&course=${encodeURIComponent('Course Name')}`;
+            form.submit();
+        }
+    </script>
+
+</body>
+</html>

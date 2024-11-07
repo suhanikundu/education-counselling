@@ -1,0 +1,93 @@
+body {
+    font-family: 'Itim', cursive;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.payment-header h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.payment-header p {
+    font-size: 16px;
+    color: #777;
+}
+
+.payment-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.payment-form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+
+.payment-form .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-form .col-50 {
+    width: 48%;
+}
+
+.payment-form .btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.payment-form .btn:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .last h6 {
+    margin-bottom: 10px;
+}
+
+footer .fa {
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+footer .fa:hover {
+    color: #4CAF50;
+}

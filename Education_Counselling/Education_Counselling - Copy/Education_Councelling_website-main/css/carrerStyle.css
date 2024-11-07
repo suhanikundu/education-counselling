@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Itim', cursive;
+}
+body{
+    background:  linear-gradient(to right, #ffffff 0%, #ffffff 0%,#ffffff 100%);;
+}
+.carousel{
+    margin-top: 20px;
+    
+}
+img{
+    border-radius: 10px;
+}
+h2{
+    text-align: center;
+}
+.container{
+    margin-top: 3%;
+}
+.inner{
+    overflow: hidden;
+}
+.inner img{
+    transition: all 1s ease;
+}
+.inner:hover img{
+    transform: scale(1.5);
+}
+.sh{
+    margin-top: 80px!important;
+}
+
+.footer{
+	display: flex;
+}
+ .last{
+	margin-top: 20px;
+	padding: 20px 710px;
+	background: black;
+	
+}
+.last h6{
+	color: white;
+	font-size: 20px;
+	text-align: center;
+}
+.last i{
+	color: white;
+    padding: 15px 3px;
+}
+.tp{
+    font-weight: bold;
+}

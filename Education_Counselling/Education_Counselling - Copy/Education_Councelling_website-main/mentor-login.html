@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mentor Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Owl-Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="css/Stylelogin.css">
+</head>
+
+<body>
+
+    <div class="header" id="topheader">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container text-uppercase p-2">
+                <a class="navbar-brand font-weight-bold text-white" href="#"><b>MENTOR LOGIN</b></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="panel">
+            <div class="row">
+                <div class="col liquid">
+                    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mentor Portal</h4>
+                    <h4>-Empowering Career Paths-</h4>
+
+                    <!-- Owl-Carousel -->
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <img src="images/Rhitwika1.jpeg" alt="Mentor 1" class="login_img">
+                        </div>
+                        <div class="item">
+                            <img src="images/Suhani1.jpeg" alt="Mentor 2" class="login_img">
+                        </div>
+                        <div class="item">
+                            <img src="images/Sayan.jpeg" alt="Mentor 3" class="login_img">
+                        </div>
+                        
+                        <div class="item">
+                            <img src="images/Kaushan.jpeg" alt="Mentor 4" class="login_img">
+                        </div>
+                    </div>
+                    <!-- /Owl-Carousel -->
+
+                </div>
+                <div class="col login">
+
+                    <form id="mentorLoginForm" name="mentorForm">
+                        <div class="titles">
+                            <h3>Mentor Login</h3>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" class="form-input" name="mentorEmail" id="mentorEmail" required />
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-input" name="mentorPassword" id="mentorPassword" required>
+                            <div class="input-icon">
+                                <i class="fas fa-user-lock"></i>
+                            </div>
+                        </div>
+                        <input type="button" class="btn btn-login" value="Login" onclick="mentorLogin()">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+
+    <script>
+        function mentorLogin() {
+            var email = document.forms["mentorForm"]["mentorEmail"].value;
+            var password = document.forms["mentorForm"]["mentorPassword"].value;
+
+            if (email == "") {
+                document.getElementById("mentorEmail").style.backgroundColor = "yellow";
+                alert("Please fill the email field");
+            }
+
+            if (password == "") {
+                document.getElementById("mentorPassword").style.backgroundColor = "yellow";
+                alert("Please fill the password field");
+            }
+
+            if (email !== "" && password !== "") {
+                const mentorLoginData = {
+                    email: email,
+                    password: password
+                };
+                console.log(mentorLoginData);
+                fetch('https://education-counselling-server.vercel.app/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(mentorLoginData),
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json(); 
+                    })
+                    .then(data => {
+                        console.log("Response data:", data); 
+                        if(data && data.data && data.data.role==="mentor") {window.location.href="http://127.0.0.1:5500/Education_Councelling_website-main/rhitwika_detail.html"}
+                        
+                        else
+                        {
+                            window.alert("check your credentials.")
+                        }
+                    })
+
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+
+}
+        }
+
+        function registerMentor() {
+            window.location.href = 'mentor-register.html';
+        }
+
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: true,
+
+                items: 1
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+

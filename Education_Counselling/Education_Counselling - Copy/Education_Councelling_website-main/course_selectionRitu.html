@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Courses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/courseStyle.css">
+    <style>
+        body {
+            font-family: 'Itim', cursive;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .wrapper h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #333;
+        }
+
+        .wrapper p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .topic {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .topic h3, .topic h5 {
+            margin: 0;
+            font-size: 2em;
+            color: #fff;
+            background-color: #4CAF50;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .courses {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .course {
+            width: calc(33.333% - 40px);
+            margin: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .course-header img {
+            width: 100%;
+            height: auto;
+        }
+
+        .course-body {
+            padding: 15px;
+        }
+
+        .course-body h3 {
+            margin: 10px 0;
+            font-size: 1.4em;
+        }
+
+        .course-countdown {
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        .course-countdown h3 a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .course-countdown h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .course-countdown ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .course-countdown li {
+            background-color: #ddd;
+            margin: 0 5px;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
+        }
+
+        .footer h6 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .footer i {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="wrapper">
+            <h1>CHOOSE ANY ONE</h1>
+            <p>Success usually comes to those who are too busy to be looking for it.</p>
+        </div>
+
+        <!-- After 12th Courses -->
+        <div class="topic">
+            <h3>After 12th</h3>
+        </div>
+
+        <div class="courses">
+            <!-- Example Course -->
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c1.jpg" alt="B.Com - Bachelor of Commerce">
+                </div>
+                <div class="course-body">
+                    <h3>B.Com - Bachelor of Commerce</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2024-11-30">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c2.jpg" alt="B.Com LL.B - Integrated Law Program">
+                </div>
+                <div class="course-body">
+                    <h3>B.Com LL.B - Integrated Law Program</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2024-12-31">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c3.jpg" alt="BE/B.Tech - Bachelor of Technology">
+                </div>
+                <div class="course-body">
+                    <h3>BE/B.Tech - Bachelor of Technology</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2024-12-25">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c4.jpg" alt="B.Arch - Bachelor of Architecture">
+                </div>
+                <div class="course-body">
+                    <h3>B.Arch - Bachelor of Architecture</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2024-12-22">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c5.jpg" alt="BFD - Bachelor of Fashion Designing">
+                </div>
+                <div class="course-body">
+                    <h3>BFD - Bachelor of Fashion Designing</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2024-12-07">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c1.jpg" alt="MBBS">
+                </div>
+                <div class="course-body">
+                    <h3>MBBS</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2025-01-08">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c4.jpg" alt="B.Sc. Mathematics">
+                </div>
+                <div class="course-body">
+                    <h3>B.Sc. Mathematics</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2025-01-01">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- After Graduation Courses -->
+        <div class="topic">
+            <h3>After Graduation</h3>
+        </div>
+
+        <div class="courses">
+            <!-- Example Course -->
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c6.jpg" alt="M.Com - Master of Commerce">
+                </div>
+                <div class="course-body">
+                    <h3>M.Com - Master of Commerce</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2024-12-01">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c7.jpg" alt="MBA - Master of Business Administration">
+                </div>
+                <div class="course-body">
+                    <h3>MBA - Master of Business Administration</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2025-02-15">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c8.jpg" alt="M.Sc - Master of Science">
+                </div>
+                <div class="course-body">
+                    <h3>M.Sc - Master of Science</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2025-01-20">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c9.jpg" alt="M.Arch - Master of Architecture">
+                </div>
+                <div class="course-body">
+                    <h3>M.Arch - Master of Architecture</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2025-03-10">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c10.jpg" alt="MFD - Master of Fashion Designing">
+                </div>
+                <div class="course-body">
+                    <h3>MFD - Master of Fashion Designing</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2025-02-25">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="course">
+                <div class="course-header">
+                    <img src="images/c6.jpg" alt="M.Ed - Master of Education">
+                </div>
+                <div class="course-body">
+                    <h3>M.Ed - Master of Education</h3>
+                </div>
+                <div class="course-countdown">
+                    <h3><a href="payment.html">Registration open</a></h3>
+                    <ul data-countdown="2025-03-05">
+                        <li data-days="00">00</li>
+                        <li data-hours="00">00</li>
+                        <li data-minuts="00">00</li>
+                        <li data-seconds="00">00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h6>Connect with us:</h6>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('[data-countdown]').each(function() {
+                var $this = $(this),
+                    finalDate = $(this).data('countdown');
+
+                $this.countdown(finalDate, function(event) {
+                    $this.html(event.strftime('%D days %H:%M:%S'));
+                });
+            });
+        });
+    </script>
+</body>
+</html>

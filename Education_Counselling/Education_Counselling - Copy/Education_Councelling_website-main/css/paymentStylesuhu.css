@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Ubuntu');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+:root{
+    --primary-gradient: linear-gradient(to right, #4e4376, #2b5876);
+    --mango-gradient : linear-gradient(to right, #ffa751, #ffe259);
+    --text-color: #F7F9F9;
+    --primary-shadow: 3px 4px 7px rgba(27, 27, 27, 0.534);
+    --border-color: rgba(0,0,0,0.329);
+}
+
+body{
+  background: url('../images/payment.jpg'); 
+  margin: 0 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.payment{
+  background: #f8f8f8;
+  max-width: 360px;
+  margin: 130px auto;
+  height: auto;
+  padding: 35px;
+  padding-top: 70px;
+  border-radius: 15px;
+  position: relative;
+  border: 3px solid violet;
+}
+
+.payment h2{
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  color: #0d3c61;
+}
+
+.form .label{
+  display: block;
+  color: #555555;
+  margin-bottom: 6px;
+  
+}
+
+.input{
+  padding: 13px 0px 13px 25px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #dddddd;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  outline: none;
+  font-size: 16px;
+  color: #555555;
+}
+
+.card-grp{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-item{
+  width: 48%;
+}
+
+.space{
+  margin-bottom: 20px;
+}
+
+.icon-relative{
+  position: relative;
+}
+
+.icon-relative .fas,
+.icon-relative .far{
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
+  font-size: 20px;
+  color: #555555;
+}
+
+.btn{
+  margin-top: 40px;
+  
+  padding: 12px;
+  text-align: center;
+  color: #f8f8f8;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.payment-logo{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: #f8f8f8;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  text-align: center;
+  line-height: 85px;
+}
+
+.payment-logo:before{
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 90px;
+  height: 90px;
+  background: #2196F3;
+  border-radius: 50%;
+}
+
+.payment-logo p{
+  position: relative;
+  color: #f8f8f8;
+  font-family: 'Baloo Bhaijaan', cursive;
+  font-size: 58px;
+}
+
+
+@media screen and (max-width: 420px){
+  .card-grp{
+    flex-direction: column;
+  }
+  .card-item{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .btn{
+    margin-top: 20px;
+  }
+}
+.btno{
+    padding: .5rem 1.5rem;
+    border: none;
+    border-radius: 4rem;
+    background: #060b0e;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: var(--Montserrat);
+    box-shadow: var(--primary-shadow);
+    cursor: pointer;
+    width: 50%;
+}
+.btno:hover{
+    background: var(--primary-gradient);
+}

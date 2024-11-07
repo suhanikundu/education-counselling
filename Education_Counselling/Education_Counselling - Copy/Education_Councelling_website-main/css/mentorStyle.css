@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.mentor-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.mentor-section h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+.mentor-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.mentor-card {
+    background-color: white;
+    width: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.mentor-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.mentor-card h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.mentor-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+.rating {
+    color: #ffcc00;
+}
+
+.book-btn {
+    display: block;
+    margin-top: 15px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.book-btn:hover {
+    background-color: #45a049;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer h6 {
+    margin: 0 0 10px;
+}
+
+.footer .fa {
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.footer .fa:hover {
+    color: #4CAF50;
+}

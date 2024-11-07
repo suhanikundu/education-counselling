@@ -1,0 +1,17 @@
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Itim', cursive;
+}
+p{
+    font-size: 1.3rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #606060;
+}
+.imgb{
+    padding: 40px 0!important;
+    border-radius: 3px!important;
+}

@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+    font-family: 'Itim', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+.header {
+    background-color: #343a40;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.navbar-dark .navbar-brand {
+    color: #fff;
+}
+
+/* Mentor Profile */
+.panel {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+ul.list-group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.list-group li {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+}
+
+ul.list-group li b {
+    color: #007bff;
+}
+
+ul.list-group-item {
+    border: none;
+}
+
+/* Mentor Features */
+.card {
+    margin-bottom: 20px;
+    border: none;
+    background-color: #f8f9fa;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.btn {
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border: none;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 60px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    ul.list-group li {
+        padding: 8px;
+    }
+
+    ul.list-group li b {
+        font-size: 1rem;
+    }
+}

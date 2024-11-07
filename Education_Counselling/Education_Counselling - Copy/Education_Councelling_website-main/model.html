@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Input Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .form-section label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="text-center mb-4">Input Form for AI Model</h2>
+    <form>
+        <!-- Logical Quotient Rating -->
+        <div class="form-section">
+            <label for="logicalQuotient">Logical Quotient Rating (0-9)</label>
+            <input type="number" class="form-control" id="logicalQuotient" name="logicalQuotient" min="0" max="9" required>
+        </div>
+
+        <!-- Number of Hackathons -->
+        <div class="form-section">
+            <label for="hackathons">Number of Hackathons</label>
+            <input type="number" class="form-control" id="hackathons" name="hackathons" required>
+        </div>
+
+        <!-- Coding Skills Rating -->
+        <div class="form-section">
+            <label for="codingSkills">Coding Skills Rating (0-9)</label>
+            <input type="number" class="form-control" id="codingSkills" name="codingSkills" min="0" max="9" required>
+        </div>
+
+        <!-- Public Speaking Points -->
+        <div class="form-section">
+            <label for="publicSpeaking">Public Speaking Points (0-9)</label>
+            <input type="number" class="form-control" id="publicSpeaking" name="publicSpeaking" min="0" max="9" required>
+        </div>
+
+        <!-- Self-learning Capability -->
+        <div class="form-section">
+            <label for="selfLearning">Self-learning Capability?</label>
+            <select class="form-select" id="selfLearning" name="selfLearning" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <!-- Extra Courses Done -->
+        <div class="form-section">
+            <label for="extraCourses">Extra Courses Done?</label>
+            <select class="form-select" id="extraCourses" name="extraCourses" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <!-- Certifications -->
+        <div class="form-section">
+            <label for="certifications">Certifications</label>
+            <select class="form-select" id="certifications" name="certifications" required>
+                <option>Information Security</option>
+                <option>Shell Programming</option>
+                <option>R Programming</option>
+                <option>Distro Making</option>
+                <option>Machine Learning</option>
+                <option>Full Stack</option>
+                <option>Hadoop</option>
+                <option>App Development</option>
+                <option>Python</option>
+            </select>
+        </div>
+
+        <!-- Workshops -->
+        <div class="form-section">
+            <label for="workshops">Workshops</label>
+            <select class="form-select" id="workshops" name="workshops" required>
+                <option>Testing</option>
+                <option>Database Security</option>
+                <option>Game Development</option>
+                <option>Data Science</option>
+                <option>System Designing</option>
+                <option>Hacking</option>
+                <option>Cloud Computing</option>
+                <option>Web Technologies</option>
+            </select>
+        </div>
+
+        <!-- Reading and Writing Skills -->
+        <div class="form-section">
+            <label for="readingWritingSkills">Reading and Writing Skills</label>
+            <select class="form-select" id="readingWritingSkills" name="readingWritingSkills" required>
+                <option>Poor</option>
+                <option>Medium</option>
+                <option>Excellent</option>
+            </select>
+        </div>
+
+        <!-- Memory Capability Score -->
+        <div class="form-section">
+            <label for="memoryCapability">Memory Capability Score</label>
+            <select class="form-select" id="memoryCapability" name="memoryCapability" required>
+                <option>Poor</option>
+                <option>Medium</option>
+                <option>Excellent</option>
+            </select>
+        </div>
+
+        <!-- Interested Subjects -->
+        <div class="form-section">
+            <label for="interestedSubjects">Interested Subjects</label>
+            <select class="form-select" id="interestedSubjects" name="interestedSubjects" required>
+                <option>Programming</option>
+                <option>Management</option>
+                <option>Data Engineering</option>
+                <option>Networks</option>
+                <option>Software Engineering</option>
+                <option>Cloud Computing</option>
+                <option>Parallel Computing</option>
+                <option>IOT</option>
+                <option>Computer Architecture</option>
+                <option>Hacking</option>
+            </select>
+        </div>
+
+        <!-- Interested Career Area -->
+        <div class="form-section">
+            <label for="careerArea">Interested Career Area</label>
+            <select class="form-select" id="careerArea" name="careerArea" required>
+                <option>Testing</option>
+                <option>System Developer</option>
+                <option>Business Process Analyst</option>
+                <option>Security</option>
+                <option>Developer</option>
+                <option>Cloud Computing</option>
+            </select>
+        </div>
+
+        <!-- Preferred Company Type -->
+        <div class="form-section">
+            <label for="companyType">Type of Company Want to Settle In?</label>
+            <select class="form-select" id="companyType" name="companyType" required>
+                <option>BPA</option>
+                <option>Cloud Services</option>
+                <option>Product Development</option>
+                <option>Testing and Maintenance Services</option>
+                <option>SaaS Services</option>
+                <option>Web Services</option>
+                <option>Finance</option>
+                <option>Sales and Marketing</option>
+                <option>Product-based</option>
+                <option>Service-based</option>
+            </select>
+        </div>
+
+        <!-- Taken Inputs from Seniors or Elders -->
+        <div class="form-section">
+            <label for="inputsFromSeniors">Taken Inputs from Seniors or Elders?</label>
+            <select class="form-select" id="inputsFromSeniors" name="inputsFromSeniors" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <!-- Management or Technical -->
+        <div class="form-section">
+            <label for="managementTechnical">Management or Technical</label>
+            <select class="form-select" id="managementTechnical" name="managementTechnical" required>
+                <option value="man">Management</option>
+                <option value="tech">Technical</option>
+            </select>
+        </div>
+
+        <!-- Hard/Smart Worker -->
+        <div class="form-section">
+            <label for="workerType">Hard/Smart Worker</label>
+            <select class="form-select" id="workerType" name="workerType" required>
+                <option value="hard">Hard</option>
+                <option value="smart">Smart</option>
+            </select>
+        </div>
+
+        <!-- Worked in Teams Ever -->
+        <div class="form-section">
+            <label for="workedInTeams">Worked in Teams Ever?</label>
+            <select class="form-select" id="workedInTeams" name="workedInTeams" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <!-- Introvert -->
+        <div class="form-section">
+            <label for="introvert">Introvert</label>
+            <select class="form-select" id="introvert" name="introvert" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-section text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

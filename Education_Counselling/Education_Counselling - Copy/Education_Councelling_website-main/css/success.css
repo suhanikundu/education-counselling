@@ -1,0 +1,51 @@
+/* General Body Styling */
+body {
+    font-family: 'Itim', cursive;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 100px;
+    margin: 0;
+}
+
+/* Success Message Container */
+.success-message {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Heading Style */
+.success-message h1 {
+    color: #4CAF50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Paragraph Style */
+.success-message p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Button Styling */
+.success-message a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.success-message a:hover {
+    background-color: #45a049;
+}

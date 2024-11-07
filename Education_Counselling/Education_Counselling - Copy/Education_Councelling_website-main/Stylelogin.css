@@ -1,0 +1,125 @@
+/* General Body and Container Styles */
+body {
+    font-family: 'Itim', cursive;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #343a40;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+.container {
+    margin-top: 80px; /* Adjust based on header height */
+}
+
+/* Panel Styles */
+.panel {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Owl Carousel Styles */
+.owl-carousel .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Adjust height for rectangular images */
+}
+
+.login_img {
+    width: 20px; /* Decrease width */
+    height: 300px; /* Increase height */
+    object-fit: cover; /* Ensures the image covers the container */
+    border: 2px solid #ddd; /* Optional: adds a border around the image */
+}
+
+/* Login Styles */
+.col.login {
+    padding: 20px;
+}
+
+.btn-signup, .btn-login {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-signup {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-signup:hover {
+    background-color: #0056b3;
+}
+
+.btn-login {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-login:hover {
+    background-color: #218838;
+}
+
+/* Form Input Styles */
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.input-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.titles h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 60px; /* Adjust based on header height */
+    }
+
+    .owl-carousel .item {
+        height: 200px; /* Adjust for smaller screens */
+    }
+
+    .login_img {
+        width: 120px; /* Adjust for smaller screens */
+        height: 80px; /* Adjust for smaller screens */
+    }
+}
+

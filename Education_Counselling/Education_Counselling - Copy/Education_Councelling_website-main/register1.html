@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="css/Styleregister.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>REGISTRATION FORM</h2>
+        </div>
+        <form class="form" id="form">
+            <div class="form-control">
+                <label>Email</label>
+                <input type="email" name="" id="email" placeholder="Enter your Email" autocomplete="off">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Msg</small>
+            </div>
+
+            <div class="form-control">
+                <label>Password</label>
+                <input type="password" name="" id="password" placeholder="Enter your Password" autocomplete="off">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Msg</small>
+            </div>
+            <div class="form-control">
+                <label> Role</label>
+                <input type="role" name="" id="role" placeholder="Enter your Role"
+                    autocomplete="off">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Msg</small>
+            </div>
+            <input type="submit" value="submit" class="btn" name="">
+
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        const form = document.getElementById('form');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const role = document.getElementById('role');
+
+        // Form submit event
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            validate();
+        });
+
+        const sendDataToBackend = async (userData) => {
+            try {
+                const response = await fetch('https://education-counselling-server.vercel.app/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(userData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    swal("Welcome! " + userData.email, "Registration Successful", "success");
+                    location.href = 'login.html';
+                } else {
+                    swal("Registration Failed", data.message || "Something went wrong", "error");
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                swal("Registration Failed", "An error occurred", "error");
+            }
+        };
+
+        // Validate function
+        const validate = () => {
+            const emailVal = email.value.trim();
+            const passwordVal = password.value.trim();
+            const roleVal = role.value.trim();
+            let isValid = true;
+
+            // Validation checks
+            if (usernameVal === "" || usernameVal.length <= 3 || !isNaN(usernameVal)) {
+                setErrorMsg(username, 'Invalid username');
+                isValid = false;
+            } else {
+                setSuccessMsg(username);
+            }
+
+            if (emailVal === "" || !isEmail(emailVal)) {
+                setErrorMsg(email, 'Invalid email');
+                isValid = false;
+            } else {
+                setSuccessMsg(email);
+            }
+
+            //if (phoneVal === "" || phoneVal.length !== 10) {
+              //  setErrorMsg(phone, 'Invalid phone number');
+                //isValid = false;
+            //} else {
+              //  setSuccessMsg(phone);
+            //}
+
+            if (passwordVal === "" || passwordVal.length <= 5) {
+                setErrorMsg(password, 'Password too short');
+                isValid = false;
+            } else {
+                setSuccessMsg(password);
+            }
+
+            if (role === "" || !isEmail(roleVal)) {
+                setErrorMsg(role, 'Invalid email');
+                isValid = false;
+            } else {
+                setSuccessMsg(role);
+            }
+
+            // If valid, send data to backend
+            if (isValid) {
+                sendDataToBackend({
+                    email: emailVal,
+                    password: passwordVal,
+                    role: 'student'
+                });
+            }
+        };
+
+        const setErrorMsg = (input, message) => {
+            const formControl = input.parentElement;
+            formControl.className = "form-control error";
+            formControl.querySelector('small').innerText = message;
+        };
+
+        const setSuccessMsg = (input) => {
+            const formControl = input.parentElement;
+            formControl.className = "form-control success";
+        };
+
+        const isEmail = (email) => {
+            const atSymbol = email.indexOf("@");
+            if (atSymbol < 1) return false;
+            const dot = email.lastIndexOf('.');
+            if (dot <= atSymbol + 2 || dot === email.length - 1) return false;
+            return true;
+        };
+    </script>
+</body>
+</html>

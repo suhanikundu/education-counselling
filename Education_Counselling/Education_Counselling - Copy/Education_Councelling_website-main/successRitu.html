@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .success-message {
+            text-align: center;
+            font-size: 18px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            margin-bottom: 20px;
+        }
+
+        .details h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .details p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
+        }
+
+        .footer h6 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .footer i {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="success-header">
+            <h1>Payment Successful!</h1>
+            <p class="success-message">Thank you for your payment. Your booking is confirmed.</p>
+        </div>
+
+        <div class="details">
+            <h2>Booking Details</h2>
+            <p><strong>Mentor:</strong> <span id="mentor-name"></span></p>
+            <p><strong>Course:</strong> <span id="course-name"></span></p>
+            <p><strong>Amount:</strong> ₹500</p>
+        </div>
+        
+        <div class="footer">
+            <h6>Find Us On</h6>
+            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <script>
+        // Function to get query parameters
+        function getQueryParams() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            return {
+                mentor: urlParams.get('mentor'),
+                course: urlParams.get('course')
+            };
+        }
+
+        // Populate booking details with query parameters
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = getQueryParams();
+            if (params.mentor) {
+                document.getElementById('mentor-name').textContent = params.mentor;
+            }
+            if (params.course) {
+                document.getElementById('course-name').textContent = params.course;
+            }
+        });
+    </script>
+</body>
+
+</html>
