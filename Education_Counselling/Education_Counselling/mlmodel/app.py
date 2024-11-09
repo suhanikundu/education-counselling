@@ -145,7 +145,9 @@ if st.button('Submit'):
     prediction = model.predict(preprocessed_data)
     st.write(f"Prediction: {prediction[0]}")
     # Button with anchor tag (open link in a new tab)
+    var = "https://education-counselling.vercel.app/"
     st.markdown(
-        "<a href='https://your-link.com' target='_blank'><button style='background-color: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer;'>Go to Link</button></a>",
+        f"<a href={var} target='_blank'><button style='background-color: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer;'>Go to Link</button></a>",
         unsafe_allow_html=True
-    )    
+    )   
+# , CRM Technical Developer, Database Developer, Mobile Applications Developer, Network Security Engineer, Software Developer, Software Engineer, Software Quality Assurance (QA) / Testing, Systems Security Administrator, Technical Support, UX Designer, Web Developer
