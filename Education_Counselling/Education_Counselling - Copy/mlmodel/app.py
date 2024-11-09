@@ -1,12 +1,12 @@
-from flask import Flask, render_template, request, jsonify
+import streamlit as st
 import pickle
 import numpy as np
 
-app = Flask(__name__, static_url_path='/static')
-
+# Load the model
 with open('mlp_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
+# Define the preprocessing function
 def preprocess_input(data):
     categorical_mappings = {
         'self_learning': {'yes': 1, 'no': 0},
@@ -49,7 +49,6 @@ def preprocess_input(data):
             'web technologies': 7,
         },
         'certifications': {
-                    
             'app development': 0,
             'distro making': 1,
             'full stack': 2,
@@ -60,26 +59,19 @@ def preprocess_input(data):
             'r programming': 7,
             'shell programming': 8,
         }
-
     }
 
     processed_data = []
 
-    processed_data.append(data['logical_quotient'])  
-    processed_data.append(data['no_of_hackathons'])  
-    processed_data.append(data['coding_skills'])  
-    processed_data.append(data['public_speaking'])  
+    processed_data.append(data['logical_quotient'])
+    processed_data.append(data['no_of_hackathons'])
+    processed_data.append(data['coding_skills'])
+    processed_data.append(data['public_speaking'])
 
-    processed_data.append(categorical_mappings['self_learning'].get(data['self_learning'], 0))  
-    processed_data.append(categorical_mappings['extra_courses'].get(data['extra_courses'], 0))  
-
-    # certifications = ['app development', 'distro making', 'full stack', 'hadoop', 'information security', 'machine learning', 'python', 'r programming', 'shell programming']
-    # workshops = ['cloud computing', 'data science', 'database security', 'game development', 'hacking', 'system designing', 'testing', 'web technologies']
-    
-    processed_data.append(categorical_mappings['certifications'].get(data['certifications'], 0))  
-    processed_data.append(categorical_mappings['workshops'].get(data['workshops'], 0))  
-
-
+    processed_data.append(categorical_mappings['self_learning'].get(data['self_learning'], 0))
+    processed_data.append(categorical_mappings['extra_courses'].get(data['extra_courses'], 0))
+    processed_data.append(categorical_mappings['certifications'].get(data['certifications'], 0))
+    processed_data.append(categorical_mappings['workshops'].get(data['workshops'], 0))
     processed_data.append(categorical_mappings['reading_and_writing_skills'].get(data['reading_and_writing_skills'], 1))
     processed_data.append(categorical_mappings['memory_capability'].get(data['memory_capability'], 1))
 
@@ -88,38 +80,67 @@ def preprocess_input(data):
     processed_data.append(categorical_mappings['company_type'].get(data['company_type'], 0))
     processed_data.append(categorical_mappings['interested_books'].get(data['interested_books'], 0))
 
-    # if(data['management_or_technical'] == 'yes'):
-    processed_data.append(1)
-    processed_data.append(0)
+    processed_data.append(1)  # management_or_technical (always 1 as per code)
+    processed_data.append(0)  # management_or_technical (always 0 as per code)
 
     processed_data.append(categorical_mappings['taken_inputs'].get(data['taken_inputs'], 0))
 
-    # if(data['hard_smart_worker'] == 'yes'):
-    processed_data.append(1)
-    processed_data.append(0)
+    processed_data.append(1)  # hard_smart_worker (always 1 as per code)
+    processed_data.append(0)  # hard_smart_worker (always 0 as per code)
 
     processed_data.append(categorical_mappings['worked_in_teams'].get(data['worked_in_teams'], 0))
     processed_data.append(categorical_mappings['introvert'].get(data['introvert'], 0))
 
     return np.array(processed_data).reshape(1, -1)
 
-@app.route('/')
-def index():
-    return jsonify({"message": "Hello, World!"})
+# Streamlit UI
+st.title("Prediction Model")
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    try:
-        data = request.get_json()
+# Input form
+logical_quotient = st.number_input("Logical Quotient", min_value=0)
+no_of_hackathons = st.number_input("Number of Hackathons", min_value=0)
+coding_skills = st.number_input("Coding Skills", min_value=0)
+public_speaking = st.number_input("Public Speaking", min_value=0)
 
-        input_features = preprocess_input(data)
+self_learning = st.selectbox("Self Learning", ['yes', 'no'])
+extra_courses = st.selectbox("Extra Courses", ['yes', 'no'])
+certifications = st.selectbox("Certifications", ['app development', 'distro making', 'full stack', 'hadoop', 'information security', 'machine learning', 'python', 'r programming', 'shell programming'])
+workshops = st.selectbox("Workshops", ['cloud computing', 'data science', 'database security', 'game development', 'hacking', 'system designing', 'testing', 'web technologies'])
+reading_and_writing_skills = st.selectbox("Reading and Writing Skills", ['poor', 'medium', 'excellent'])
+memory_capability = st.selectbox("Memory Capability", ['poor', 'medium', 'excellent'])
+interested_subjects = st.selectbox("Interested Subjects", ['programming', 'Management', 'data engineering', 'networks', 'Software Engineering', 'cloud computing', 'parallel computing', 'IOT', 'Computer Architecture', 'hacking'])
+interested_career_area = st.selectbox("Interested Career Area", ['testing', 'system developer', 'Business process analyst', 'security', 'developer', 'cloud computing'])
+company_type = st.selectbox("Company Type", ['BPA', 'Cloud Services', 'product development', 'Testing and Maintainance Services', 'SAaS services', 'Web Services', 'Finance', 'Sales and Marketing', 'Product based', 'Service Based'])
+interested_books = st.selectbox("Interested Books", ['Series', 'Autobiographies', 'Travel', 'Guide', 'Health', 'Journals', 'Anthology', 'Dictionaries', 'Prayer books', 'Art', 'Encyclopedias', 'Religion-Spirituality', 'Action and Adventure', 'Comics', 'Horror', 'Satire', 'Self help', 'History', 'Cookbooks', 'Math', 'Biographies', 'Drama', 'Diaries', 'Science fiction', 'Poetry', 'Romance', 'Science', 'Trilogy', 'Fantasy', 'Childrens', 'Mystery'])
+management_or_technical = 'tech'  # Assuming 'tech' for simplicity
+taken_inputs = st.selectbox("Taken Inputs", ['yes', 'no'])
+worked_in_teams = st.selectbox("Worked in Teams", ['yes', 'no'])
+introvert = st.selectbox("Introvert", ['yes', 'no'])
 
-        prediction = model.predict(input_features)
+# Prepare data
+data = {
+    'logical_quotient': logical_quotient,
+    'no_of_hackathons': no_of_hackathons,
+    'coding_skills': coding_skills,
+    'public_speaking': public_speaking,
+    'self_learning': self_learning,
+    'extra_courses': extra_courses,
+    'certifications': certifications,
+    'workshops': workshops,
+    'reading_and_writing_skills': reading_and_writing_skills,
+    'memory_capability': memory_capability,
+    'interested_subjects': interested_subjects,
+    'interested_career_area': interested_career_area,
+    'company_type': company_type,
+    'interested_books': interested_books,
+    'management_or_technical': management_or_technical,
+    'taken_inputs': taken_inputs,
+    'worked_in_teams': worked_in_teams,
+    'introvert': introvert,
+}
 
-        return jsonify({'prediction': prediction.tolist()})
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-if __name__ == '__main__':
-    app.run(debug=True,port=5000)
+# Predict when user clicks 'Submit'
+if st.button('Submit'):
+    preprocessed_data = preprocess_input(data)
+    prediction = model.predict(preprocessed_data)
+    st.write(f"Prediction: {prediction[0]}")
