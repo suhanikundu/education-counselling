@@ -144,3 +144,8 @@ if st.button('Submit'):
     preprocessed_data = preprocess_input(data)
     prediction = model.predict(preprocessed_data)
     st.write(f"Prediction: {prediction[0]}")
+    # Button with anchor tag (open link in a new tab)
+    st.markdown(
+        "<a href='https://your-link.com' target='_blank'><button style='background-color: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer;'>Go to Link</button></a>",
+        unsafe_allow_html=True
+    )    
