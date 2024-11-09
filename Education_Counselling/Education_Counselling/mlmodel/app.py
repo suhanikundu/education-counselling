@@ -145,7 +145,40 @@ if st.button('Submit'):
     prediction = model.predict(preprocessed_data)
     st.write(f"Prediction: {prediction[0]}")
     # Button with anchor tag (open link in a new tab)
-    var = "https://education-counselling.vercel.app/"
+    var = "https://education-counselling-steel.vercel.app/kaushan_detail.html"
+    if(prediction[0]=="CRM Technical Developer"):
+        var = "https://education-counselling-steel.vercel.app/techdev.html"
+    elif(prediction[0]=="Database Developer"):
+        var = "https://education-counselling-steel.vercel.app/database.html"
+
+    elif(prediction[0]=="Mobile Applications Developer"):
+        var = "https://education-counselling-steel.vercel.app/mobapp.html"
+
+    elif(prediction[0]=="Network Security Engineer"):
+        var = "https://education-counselling-steel.vercel.app/network.html"
+
+    elif(prediction[0]=="Software Developer"):
+        var = "https://education-counselling-steel.vercel.app/software.html"
+
+    elif(prediction[0]=="Software Engineer"):
+        var = "https://education-counselling-steel.vercel.app/network.html"
+
+    elif(prediction[0]=="Software Quality Assurance (QA) / Testing"):
+        var = "https://education-counselling-steel.vercel.app/database.html"
+    elif(prediction[0]=="Systems Security Administrator"):
+        var = "https://education-counselling-steel.vercel.app/techdev.html"
+
+    elif(prediction[0]=="Technical Support"):
+        var = "https://education-counselling-steel.vercel.app/database.html"
+
+    elif(prediction[0]=="UX Designer"):
+        var = "https://education-counselling-steel.vercel.app/software.html"
+
+    elif(prediction[0]=="Web Developer"):
+        var = "https://education-counselling-steel.vercel.app/database.html"
+
+    else:
+        var = "https://education-counselling-steel.vercel.app/software.html"
     st.markdown(
         f"<a href={var} target='_blank'><button style='background-color: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer;'>Go to Link</button></a>",
         unsafe_allow_html=True

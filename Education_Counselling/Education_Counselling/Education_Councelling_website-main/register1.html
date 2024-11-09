@@ -58,6 +58,7 @@
         });
 
         const sendDataToBackend = async (userData) => {
+            console.log(userData);
             try {
                 const response = await fetch('https://education-counselling-server.vercel.app/auth/register', {
                     method: 'POST',
@@ -87,19 +88,13 @@
             let isValid = true;
 
             // Validation checks
-            if (usernameVal === "" || usernameVal.length <= 3 || !isNaN(usernameVal)) {
-                setErrorMsg(username, 'Invalid username');
-                isValid = false;
-            } else {
-                setSuccessMsg(username);
-            }
+            console.log(emailVal, passwordVal, roleVal);
 
             if (emailVal === "" || !isEmail(emailVal)) {
-                setErrorMsg(email, 'Invalid email');
+                // setErrorMsg(emailVal, 'Invalid email');
                 isValid = false;
-            } else {
-                setSuccessMsg(email);
-            }
+            } 
+            console.log(isValid);
 
             //if (phoneVal === "" || phoneVal.length !== 10) {
               //  setErrorMsg(phone, 'Invalid phone number');
@@ -109,39 +104,36 @@
             //}
 
             if (passwordVal === "" || passwordVal.length <= 5) {
-                setErrorMsg(password, 'Password too short');
+                // setErrorMsg(passwordVal, 'Password too short');
                 isValid = false;
-            } else {
-                setSuccessMsg(password);
-            }
+            } 
+            console.log(isValid);
 
-            if (role === "" || !isEmail(roleVal)) {
-                setErrorMsg(role, 'Invalid email');
+            if (roleVal === ""  ) {
+                // setErrorMsg(roleVal, 'Invalid role');
                 isValid = false;
-            } else {
-                setSuccessMsg(role);
-            }
-
+            } 
+            console.log(isValid);
             // If valid, send data to backend
             if (isValid) {
                 sendDataToBackend({
                     email: emailVal,
                     password: passwordVal,
-                    role: 'student'
+                    role: roleVal
                 });
             }
         };
 
-        const setErrorMsg = (input, message) => {
-            const formControl = input.parentElement;
-            formControl.className = "form-control error";
-            formControl.querySelector('small').innerText = message;
-        };
+        // const setErrorMsg = (input, message) => {
+        //     const formControl = input.parentElement;
+        //     formControl.className = "form-control error";
+        //     formControl.querySelector('small').innerText = message;
+        // };
 
-        const setSuccessMsg = (input) => {
-            const formControl = input.parentElement;
-            formControl.className = "form-control success";
-        };
+        // const setSuccessMsg = (input) => {
+        //     const formControl = input.parentElement;
+        //     formControl.className = "form-control success";
+        // };
 
         const isEmail = (email) => {
             const atSymbol = email.indexOf("@");
