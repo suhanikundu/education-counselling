@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .form-section label {
+            font-weight: bold;
+        }
+        .link-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .link-section a {
+            font-weight: bold;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .link-section a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container my-5">
+    
+    <form onsubmit="event.preventDefault(); callGeminiApi();">
+              
+        
+    </form>
+
+    <!-- Gemini AI Link Section -->
+    <div class="link-section">
+        <p>Explore Chatbot:</p>
+        <a href="https://aistudio.google.com/prompts/new_chat" target="_blank">ChatBot</a>
+    </div>
+</div>
+
+<script>
+    async function callGeminiApi() {
+        // Collect form data
+        const logicalQuotient = document.getElementById('logicalQuotient').value;
+
+        // Build the data payload for the API
+        const data = {
+            logicalQuotient: logicalQuotient,
+            // add other form field values here if you add additional fields
+        };
+
+        try {
+            const response = await fetch('https://aistudio.google.com/prompts/1lByCWzw0cbFO07YB-WkWcmHqAIT5z01x', { // <-- Change this to your actual Gemini AI API endpoint
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'AIzaSyCH9_twSiu9WQferEnCcqbE4VyIBqwgj2o' // <-- Replace YOUR_API_KEY with your actual API key if required
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            console.log('API Response:', result);
+
+            // Handle the response (e.g., show success message or process result)
+            alert('Submission successful!'); // You can replace this with a more detailed message if desired
+        } catch (error) {
+            console.error('Error calling Gemini AI API:', error);
+            alert('There was an error with your submission.');
+        }
+    }
+</script>
+</body>
+</html>
