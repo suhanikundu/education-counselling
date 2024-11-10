@@ -70,7 +70,14 @@
 
                 if (response.ok) {
                     swal("Welcome! " + userData.email, "Registration Successful", "success");
-                    location.href = 'https://education-counselling-steel.vercel.app/login.html';
+                    
+
+                    if(userData.role=="student") {
+                        location.href = 'https://education-counselling-steel.vercel.app/login.html';
+                    }
+                    else {
+                        location.href ='https://education-counselling-steel.vercel.app/mentor-login.html'
+                    }
                 } else {
                     swal("Registration Failed", data.message || "Something went wrong", "error");
                 }
