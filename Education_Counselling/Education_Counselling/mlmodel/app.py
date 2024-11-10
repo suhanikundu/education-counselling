@@ -161,21 +161,21 @@ if st.button('Submit'):
         var = "https://education-counselling-steel.vercel.app/software.html"
 
     elif(prediction[0]=="Software Engineer"):
-        var = "https://education-counselling-steel.vercel.app/network.html"
+        var = "https://education-counselling-steel.vercel.app/software_eng.html"
 
     elif(prediction[0]=="Software Quality Assurance (QA) / Testing"):
-        var = "https://education-counselling-steel.vercel.app/database.html"
+        var = "https://education-counselling-steel.vercel.app/sqa.html"
     elif(prediction[0]=="Systems Security Administrator"):
-        var = "https://education-counselling-steel.vercel.app/techdev.html"
+        var = "https://education-counselling-steel.vercel.app/admin.html"
 
     elif(prediction[0]=="Technical Support"):
         var = "https://education-counselling-steel.vercel.app/database.html"
 
     elif(prediction[0]=="UX Designer"):
-        var = "https://education-counselling-steel.vercel.app/software.html"
+        var = "https://education-counselling-steel.vercel.app/design.html"
 
     elif(prediction[0]=="Web Developer"):
-        var = "https://education-counselling-steel.vercel.app/database.html"
+        var = "https://education-counselling-steel.vercel.app/dev.html"
 
     else:
         var = "https://education-counselling-steel.vercel.app/software.html"
