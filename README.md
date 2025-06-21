@@ -16,7 +16,7 @@ Welcome to **EduConnect**, an AI-based Educational Counseling System designed to
 - 🤖 Career Prediction using Random Forest (Multi-Output Classifier)
 - 🌐 User-Friendly Web Interface
 - 📊 Visual Insights & Graphical Suggestions
-- 🔐 Secure and scalable backend (Flask/Django)
+- 🔐 Secure and scalable backend
 
 ---
 
@@ -26,7 +26,6 @@ Welcome to **EduConnect**, an AI-based Educational Counseling System designed to
 - **Backend**: Python, Flask / Django
 - **ML Model**: Random Forest (MultiOutputClassifier)
 - **Data Processing**: Pandas, NumPy
-- **Visualization**: Matplotlib, Seaborn
 
 ---
 
@@ -42,13 +41,6 @@ EduConnect/
 ├── dataset.csv
 ├── requirements.txt
 └── README.md
-
----
-
-## 📸 Screenshots (Optional)
-- Input Form Page
-- Recommended Career Output
-- Skill Graphs or Insights
 
 ---
 
