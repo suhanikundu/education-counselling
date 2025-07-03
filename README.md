@@ -55,7 +55,7 @@ EduConnect/
 ## 👩‍💻 Author
 **Suhani Kundu**  
 🔗 [LinkedIn](https://www.linkedin.com/in/suhanikundu)  
-📧 suhanikundu@email.com (replace with your email)
+📧 suhanikundu@email.com
 
 ---
 
